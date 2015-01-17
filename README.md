@@ -9,6 +9,7 @@ Documentation
 
 Documentation is located here
 * http://http://klaxalk.github.io/CMatrixLib
+
 and downloadable from gh-pages branch
 * https://github.com/klaxalk/CMatrixLib/tree/gh-pages
 
