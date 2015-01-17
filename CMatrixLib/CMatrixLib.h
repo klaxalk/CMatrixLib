@@ -13,8 +13,10 @@
  * \section install_sec How To
  *
  * \subsection allocation Allocating the matrix
- *  
- * etc...
+ * \include allocation.txt
+ * 
+ * \subsection multiplication Matrix multiplication
+ * \include matrix_product.txt
  */
 
 #ifndef CMATRIXLIB_H_

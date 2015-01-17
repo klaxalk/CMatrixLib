@@ -1,0 +1,8 @@
+matrix_float a_matrix;
+a_matrix.name = "Matrix A";
+
+float a_data[3*3];
+a_matrix.data = (float *) &a_data;
+
+a_matrix.height = 3;
+a_matrix.width = 3;
