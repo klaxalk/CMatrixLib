@@ -82,12 +82,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
 Introduction</h1>
-<p>The library was written to be used on a AVR u-controller.</p>
+<p>CMatrixLib is a simple library for matrix and vector float operations. It is written in ANSI C. It was created to be used on microcontrollers such as AVR and ARM family when the ANSI C library is needed.</p>
 <h1><a class="anchor" id="install_sec"></a>
 How To</h1>
+<p>Here is a small example of working with the library.</p>
 <h2><a class="anchor" id="allocation"></a>
-Allocating the matrix</h2>
-<div class="fragment"><div class="line"><a class="code" href="structmatrix__float.html">matrix_float</a> a_matrix;</div>
+Allocating the matrices</h2>
+<div class="fragment"><div class="line"><span class="comment">// allocate the matrix A</span></div>
+<div class="line"><a class="code" href="structmatrix__float.html">matrix_float</a> a_matrix;</div>
 <div class="line">a_matrix.<a class="code" href="structmatrix__float.html#a5ac083a645d964373f022d03df4849c8">name</a> = <span class="stringliteral">&quot;Matrix A&quot;</span>;</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">float</span> a_data[3*3];</div>
@@ -95,13 +97,40 @@ Allocating the matrix</h2>
 <div class="line"></div>
 <div class="line">a_matrix.<a class="code" href="structmatrix__float.html#a777dd66f9609a587ee98ad50de301662">height</a> = 3;</div>
 <div class="line">a_matrix.<a class="code" href="structmatrix__float.html#ae0ffb42440f0305b6d22a1c6106b6e6f">width</a> = 3;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// allocate the matrix B</span></div>
+<div class="line"><a class="code" href="structmatrix__float.html">matrix_float</a> b_matrix;</div>
+<div class="line">b_matrix.<a class="code" href="structmatrix__float.html#a5ac083a645d964373f022d03df4849c8">name</a> = <span class="stringliteral">&quot;Matrix B&quot;</span>;</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">float</span> b_data[3*3];</div>
+<div class="line">b_matrix.<a class="code" href="structmatrix__float.html#a57ba9c584cf7756552b7d4370e93395f">data</a> = (<span class="keywordtype">float</span> *) &amp;b_data;</div>
+<div class="line"></div>
+<div class="line">b_matrix.<a class="code" href="structmatrix__float.html#a777dd66f9609a587ee98ad50de301662">height</a> = 3;</div>
+<div class="line">b_matrix.<a class="code" href="structmatrix__float.html#ae0ffb42440f0305b6d22a1c6106b6e6f">width</a> = 3;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// allocate the matrix B</span></div>
+<div class="line"><a class="code" href="structmatrix__float.html">matrix_float</a> output_matrix;</div>
+<div class="line">output_matrix.<a class="code" href="structmatrix__float.html#a5ac083a645d964373f022d03df4849c8">name</a> = <span class="stringliteral">&quot;Output&quot;</span>;</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">float</span> output_data[3*3];</div>
+<div class="line">output_matrix.<a class="code" href="structmatrix__float.html#a57ba9c584cf7756552b7d4370e93395f">data</a> = (<span class="keywordtype">float</span> *) &amp;output_data;</div>
+<div class="line"></div>
+<div class="line">output_matrix.<a class="code" href="structmatrix__float.html#a777dd66f9609a587ee98ad50de301662">height</a> = 3;</div>
+<div class="line">output_matrix.<a class="code" href="structmatrix__float.html#ae0ffb42440f0305b6d22a1c6106b6e6f">width</a> = 3;</div>
+</div><!-- fragment --><h2><a class="anchor" id="initialization"></a>
+Initialize matrices</h2>
+<div class="fragment"><div class="line"><span class="comment">// set A to identity matrix</span></div>
+<div class="line"><a class="code" href="_c_matrix_lib_8c.html#ab9783d2b8a9a864c1ee80ff4e70d2fba">matrix_float_set_identity</a>(&amp;a_matrix);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// set B to 2s</span></div>
+<div class="line"><a class="code" href="_c_matrix_lib_8c.html#a4b88b0d9ed4f9123e9f28fab69a2ebfa">matrix_float_set_all</a>(&amp;b_matrix, 2);</div>
 </div><!-- fragment --><h2><a class="anchor" id="multiplication"></a>
 Matrix multiplication</h2>
 <div class="fragment"><div class="line"><a class="code" href="_c_matrix_lib_8c.html#aacf78710bd5bb64a37336b98974483f8">matrix_float_mul</a>(&amp;a_matrix, &amp;b_matrix, &amp;output_matrix);</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 17 2015 19:23:59 for CMatrixLib by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 17 2015 20:30:13 for CMatrixLib by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
