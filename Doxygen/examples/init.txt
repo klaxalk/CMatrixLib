@@ -1,0 +1,5 @@
+// set A to identity matrix
+matrix_float_set_identity(&a_matrix);
+
+// set B to 2s
+matrix_float_set_all(&b_matrix, 2);

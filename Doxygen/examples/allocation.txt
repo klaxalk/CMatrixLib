@@ -1,3 +1,4 @@
+// allocate the matrix A
 matrix_float a_matrix;
 a_matrix.name = "Matrix A";
 
@@ -6,3 +7,23 @@ a_matrix.data = (float *) &a_data;
 
 a_matrix.height = 3;
 a_matrix.width = 3;
+
+// allocate the matrix B
+matrix_float b_matrix;
+b_matrix.name = "Matrix B";
+
+float b_data[3*3];
+b_matrix.data = (float *) &b_data;
+
+b_matrix.height = 3;
+b_matrix.width = 3;
+
+// allocate the matrix B
+matrix_float output_matrix;
+output_matrix.name = "Output";
+
+float output_data[3*3];
+output_matrix.data = (float *) &output_data;
+
+output_matrix.height = 3;
+output_matrix.width = 3;

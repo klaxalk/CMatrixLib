@@ -8,12 +8,19 @@
  *
  * \section intro_sec Introduction
  *
- * The library was written to be used on a AVR u-controller.
+ * CMatrixLib is a simple library for matrix and vector float operations.
+ * It is written in ANSI C. It was created to be used on microcontrollers
+ * such as AVR and ARM family when the ANSI C library is needed.
  *
  * \section install_sec How To
+ * 
+ * Here is a small example of working with the library.
  *
- * \subsection allocation Allocating the matrix
+ * \subsection allocation Allocating the matrices
  * \include allocation.txt
+ * 
+ * \subsection initialization Initialize matrices
+ * \include init.txt
  * 
  * \subsection multiplication Matrix multiplication
  * \include matrix_product.txt
