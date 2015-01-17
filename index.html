@@ -87,11 +87,21 @@ Introduction</h1>
 How To</h1>
 <h2><a class="anchor" id="allocation"></a>
 Allocating the matrix</h2>
-<p>etc... </p>
-</div></div><!-- contents -->
+<div class="fragment"><div class="line"><a class="code" href="structmatrix__float.html">matrix_float</a> a_matrix;</div>
+<div class="line">a_matrix.<a class="code" href="structmatrix__float.html#a5ac083a645d964373f022d03df4849c8">name</a> = <span class="stringliteral">&quot;Matrix A&quot;</span>;</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">float</span> a_data[3*3];</div>
+<div class="line">a_matrix.<a class="code" href="structmatrix__float.html#a57ba9c584cf7756552b7d4370e93395f">data</a> = (<span class="keywordtype">float</span> *) &amp;a_data;</div>
+<div class="line"></div>
+<div class="line">a_matrix.<a class="code" href="structmatrix__float.html#a777dd66f9609a587ee98ad50de301662">height</a> = 3;</div>
+<div class="line">a_matrix.<a class="code" href="structmatrix__float.html#ae0ffb42440f0305b6d22a1c6106b6e6f">width</a> = 3;</div>
+</div><!-- fragment --><h2><a class="anchor" id="multiplication"></a>
+Matrix multiplication</h2>
+<div class="fragment"><div class="line"><a class="code" href="_c_matrix_lib_8c.html#aacf78710bd5bb64a37336b98974483f8">matrix_float_mul</a>(&amp;a_matrix, &amp;b_matrix, &amp;output_matrix);</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 17 2015 19:00:41 for CMatrixLib by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 17 2015 19:23:59 for CMatrixLib by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
