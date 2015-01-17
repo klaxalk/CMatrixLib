@@ -4,12 +4,12 @@
  * @brief sources of CMatrixLib
  */
 
-#include "matrixLib.h"
-#include "FreeRTOS.h"
-#include <stdio.h>
+#include "CmatrixLib.h"
 
 // allocation functions when using FreeRTOS
 #if USED_PLATFORM == FREE_RTOS
+
+#include "FreeRTOS.h"
 
 /**
  * dynamically allocate the matrix using FreeRTOS pvPortMalloc

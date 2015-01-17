@@ -22,6 +22,7 @@
 
 #include <stdint.h>
 #include <string.h>
+#include <stdio.h>
 
 /**
  * @struct matrix_float
