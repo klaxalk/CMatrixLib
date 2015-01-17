@@ -521,66 +521,6 @@ float matrix_float_determinant(const matrix_float * a) {
 	return (float) 0;
 }
 
-#if USED_MCU == XMEGA
-
-// print the matrix to serial output
-void matrix_float_print(const matrix_float * a) {
-	
-	int8_t i, j;
-	char temp[50];
-	
-	usartBufferPutString(USART_BUFFER, "Matrix: ", 10);
-	usartBufferPutString(USART_BUFFER, a->name, 10);
-	usartBufferPutString(USART_BUFFER, "\n\r", 10);
-	
-	for (i = 1; i <= a->height; i++) {
-		
-		for (j = 1; j <= a->width; j++) {
-			
-			sprintf(temp, "%12.8f", matrix_float_get(a, i, j));
-			usartBufferPutString(USART_BUFFER, temp, 10);
-			
-			if (j < a->width)
-			usartBufferPutString(USART_BUFFER, ", ", 10);
-			
-		}
-		
-		usartBufferPutString(USART_BUFFER, "\n\r", 10);
-	}
-	usartBufferPutString(USART_BUFFER, "\n\r", 10);
-}
-
-// print the matrix to serial output
-void vector_float_print(const vector_float * a) {
-	
-	int8_t i;
-	char temp[40];
-	
-	usartBufferPutString(USART_BUFFER, "Vector: ", 10);
-	usartBufferPutString(USART_BUFFER, a->name, 10);
-	usartBufferPutString(USART_BUFFER, "\n\r", 10);
-	
-	for (i = 1; i <= a->length; i++) {
-			
-		sprintf(temp, "%8.4f", vector_float_get(a, i));
-		usartBufferPutString(USART_BUFFER, temp, 10);
-			
-		if (a->orientation == 1) {
-			if (i < a->length) {
-				usartBufferPutString(USART_BUFFER, ", ", 10);
-			} else {
-				usartBufferPutString(USART_BUFFER, "\n\r", 10);
-			}
-		} else {
-			usartBufferPutString(USART_BUFFER, "\n\r", 10);
-		}
-		
-	}
-	usartBufferPutString(USART_BUFFER, "\n\r", 10);
-}
-
-#endif
-
 // computer the inversion of matrix A, returns 0 if the inversion doesn't exist, 1 otherwise
 int matrix_float_inverse(matrix_float * a) {
 	
