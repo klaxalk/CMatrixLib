@@ -1,8 +1,9 @@
 CMatrixLib
 ===============
 
-CMatrixLib is a simply library for matrix and vector operations. It is written in 
-ANSI C to be easily used in u-controllers, Arduino, e.c.
+CMatrixLib is a simple library for matrix and vector float operations. It is written in 
+ANSI C. It was created to be used on microcontrollers such as AVR and ARM family
+when the ANSI C library is needed.
 
 Documentation
 -------------
@@ -22,6 +23,8 @@ Source code is hosted on github
 Issues, bugs, requests, ideas
 -----------------------------
 
-You can write your bugs and suggestions here to github Issues.
+You can write your bugs and suggestions here to github issues tracker, but God knows what will happen :-).
 
-Tomáš Báča
+* https://github.com/klaxalk/CMatrixLib/issues
+
+Tomáš Báča, the author
