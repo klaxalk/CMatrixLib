@@ -2,28 +2,21 @@
  * @file CMatrixLib.h
  * @author klaxalk
  * @brief header for CMatrixLib
- */
- 
- /*! \mainpage Introduction to the CMatrixLib
- *
- * \section intro_sec Introduction
- *
- * CMatrixLib is a simple library for matrix and vector float operations.
- * It is written in ANSI C. It was created to be used on microcontrollers
- * such as AVR and ARM family when the ANSI C library is needed.
- *
- * \section install_sec How To
  * 
- * Here is a small example of working with the library.
- *
- * \subsection allocation Allocating the matrices
- * \include allocation.txt
+ * @copyright GNU Public License
  * 
- * \subsection initialization Initialize matrices
- * \include init.txt
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  * 
- * \subsection multiplication Matrix multiplication
- * \include matrix_product.txt
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>
  */
 
 #ifndef CMATRIXLIB_H_
@@ -128,7 +121,7 @@ float vector_float_inner_product(const vector_float * a, const vector_float * b)
  * @brief multiply two vectors by outer product, \b a*b
  * 
  * @param a vector
- * @param a vector
+ * @param b vector
  * @param C matrix answer
  */
 void vector_float_outer_product(const vector_float * a, const vector_float * b, matrix_float * C);
@@ -215,7 +208,7 @@ void matrix_float_transpose(const matrix_float * a, matrix_float * C);
  * 
  * @return output is written back into m
  * 
- * @param a matrix to transpose
+ * @param m matrix to transpose
  */
 void matrix_float_transpose_square(matrix_float * m);
 
