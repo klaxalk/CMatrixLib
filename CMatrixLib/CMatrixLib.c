@@ -330,6 +330,15 @@ float vector_float_get(const vector_float * v, const int16_t pos) {
 	return 0;
 }
 
+// transpose the vector
+void vector_float_transpose(vector_float * v) {
+
+	if (v->orientation == 0)
+		v->orientation = 1;
+	else if (v->orientation == 1)
+		v->orientation = 0;
+}
+
 // get row from matrix
 void matrix_float_get_row(const matrix_float * m, vector_float * v, const int16_t row) {
 	
@@ -435,7 +444,7 @@ void matrix_float_mul_vec_right(const matrix_float * m, const vector_float * v, 
 	float tempSum;
 	
 	// dimensions must agree
-	if ((m->width == v->length) & (m->height == C->length)) {
+	if ((m->width == v->length) && (m->height == C->length)) {
 		
 		for (i = 1; i <= m->height; i++) {
 			
@@ -460,22 +469,22 @@ void matrix_float_mul_vec_left(const matrix_float * m, const vector_float * v, v
 	float tempSum;
 	
 	// dimensions must agree
-	if (m->height == v->length) {
+	if ((m->height == v->length) && (m->width == C->length)) {
 		
-		for (i = 1; i <= m->height; i++) {
+		for (i = 1; i <= m->width; i++) {
 			
 			tempSum = 0;
 			
-			for (j = 1; j <= v->length; j++) {
+			for (j = 1; j <= m->height; j++) {
 				
 				tempSum += matrix_float_get(m, j, i)*vector_float_get(v, j);
 			}
-			vector_float_set(C, j, tempSum);
+			vector_float_set(C, i, tempSum);
 		}
+
+		// set orientation to horizontal
+		C->orientation = 1;
 	}
-	
-	// set orientation to horizontal
-	C->orientation = 1;
 }
 
 // compute the determinant of a matrix

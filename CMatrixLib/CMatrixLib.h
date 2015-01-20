@@ -173,6 +173,13 @@ void vector_float_set_zero(vector_float * v);
 float vector_float_get(const vector_float * v, const int16_t pos);
 
 /**
+ * @brief transpose the vector
+ *
+ * @param v vector
+ */
+void vector_float_transpose(vector_float * v);
+
+/**
  * @brief set particular cell of the matrix
  * 
  * @param m matrix
