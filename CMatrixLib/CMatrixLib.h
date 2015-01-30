@@ -52,51 +52,8 @@ typedef struct {
 	char * name; 		/**< pointer to the name array */
 } vector_float;
 
-// allocation functions when using FreeRTOS
-#if USED_PLATFORM == FREE_RTOS
-
 /**
- * @brief used only with FreeRTOS
- * 
- * dynamically allocate the matrix using FreeRTOS pvPortMalloc
- * 
- * @param h matrix height
- * @param w matrix width
- */ 
-matrix_float * matrix_float_alloc(const int16_t h, const int16_t w);
-
-/**
- * @brief used only with FreeRTOS
- * 
- * dynamically allocate the vector using FreeRTOS pvPortMalloc
- * 
- * @param length the length of the vector
- * @param orientation the orientation of the vector
- */
-vector_float * vector_float_alloc(const int16_t length, int8_t orientation);
-
-/**
- * @brief used only with FreeRTOS
- * 
- * deallocate the matrix using FreeRTOS vPortFree
- * 
- * @param m pointer to the matrix
- */
-void matrix_float_free(matrix_float * m);
-
-/**
- * @brief used only with FreeRTOS
- * 
- * deallocate the vector using FreeRTOS vPortFree
- * 
- * @param v pointer to the vector
- */
-void vector_float_free(vector_float * v);
-
-#endif /* USED_PLATFORM == FREE_RTOS */
-
-/**
- * @return answer is saved into b
+ * @return answer is saved into a
  * 
  * @brief add two vectors, \b a+b
  * 
@@ -104,6 +61,16 @@ void vector_float_free(vector_float * v);
  * @param b vector
  */
 void vector_float_add(vector_float * a, const vector_float * b);
+
+/**
+ * @return answer is saved into a
+ *
+ * @brief subtract two vectors, \b a-b
+ *
+ * @param a vector
+ * @param b vector
+ */
+void vector_float_subtract(vector_float * a, const vector_float * b);
 
 /**
  * @return float value of inner product
@@ -156,6 +123,16 @@ void vector_float_copy(vector_float * a, const vector_float * b);
  * @param value value to set
  */
 void vector_float_set(vector_float * v, const int16_t pos, const float value);
+
+/**
+ * @return the answer is written into v
+ *
+ * @brief set the whole vector to a value
+ *
+ * @param v vector to set
+ * @param value value to set
+ */
+void vector_float_set_to(vector_float * v, const float value);
 
 /**
  * @brief set the vector to all zeros
